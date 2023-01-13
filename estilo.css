@@ -1,0 +1,339 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(45deg,#000000,#808080,#000000);
+}
+p{
+    color: white;
+}
+.logo{
+    max-width: 150px;
+}
+a{
+
+    color:black ;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+.h1{
+    text-align: center;
+    margin-top: 100px;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+.header{
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items:center ;
+    flex-wrap: wrap;
+    }
+    /* essa porra de header ta responsiva slc*/
+    .menu{
+     display: flex;
+    }
+
+    .menu li{
+        margin-left: 10px;
+    }
+    .menu li a{
+        display: block;
+        padding: 10px;
+    }
+    /* CSS FLEXBOX 1*/
+.flex{
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin:  0 auto;
+}
+.flex > div{
+    flex: 1 1 200px;
+    margin: 10px ;
+}
+/* CSS GRID*/
+
+ .grid1{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr) ;
+    max-width:800px ;
+    margin: 0 auto;
+    grid-gap: 20px;
+ }
+ .grid1 > div:nth-child(n + 4){
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+ }
+ .grid1 >div.anuncio{
+    grid-column: 1;
+    grid-row: 2/5;
+    border-top: 10px solid tomato;
+    display: block;
+ }
+
+ @media(max-width: 600px){
+    .grid1{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid1 > div:nth-child(n + 4){
+        display: block;
+    }
+    .grid1 > div.anuncio{
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+    }
+}
+footer{
+     
+        height: 100px;
+        display: flex;
+        margin-top: 150px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color:gray;
+    
+}
+.link{
+    max-width: 90px;
+    display: block;
+    text-align: center;
+     margin-top: 100px;
+    margin-left: 15px;
+}
+.git{
+    max-width: 90px;
+    display: flex;
+    text-align: center;
+    margin-left: 200px;
+    margin-top: -90px;
+}
+.insta{
+    max-width: 90px;
+    display: block;
+    margin-left: 1500px;
+    margin-top: -90px;
+     
+}
+/*SLIDER */
+
+.slider{
+    margin: 0 auto;
+    width: 800px;
+    height: 900px;
+    overflow: hidden;
+    margin-top: 100px;
+    
+}
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+     
+    flex-wrap: wrap;
+  
+}
+.slides input{
+    display: none;
+}
+.slide{
+    width: 25%;
+    position: relative;
+}
+.slide img{
+    width: 1000px;
+}
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: 350px;
+    display: flex;
+    justify-content: center;
+
+}
+.manual-btn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover{
+    background-color: white;
+}
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+.navigation-auto div{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 390px;
+}
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: white;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: white;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color:white;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: white;
+}
+/*MENU HAMBURGUER*/
+
+.checkbox-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.checkbox{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0;
+}
+
+/* mudanças no checkbox*/
+.checkbox .trace{
+    width: 50px;
+    height: 2px;
+    background-color: #ffffff;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5 ease-in-out;
+}
+
+.checkbox .trace:nth-child(1){
+    top: 26px;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(2){
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3){
+    top: 66px;
+    transform: rotate(0);
+}
+/*ANIMAÇÃO*/
+
+.menu{
+    position: absolute;
+    top:28px;
+    right: 38px;
+    background: transparent;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px #ffffff;
+    z-index: -1;
+    transition: 400ms ease-in-out 0;
+}
+
+.menu-itens{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0 ;
+}
+
+.menu-itens ul{
+    list-style-type: none;
+}
+
+.menu-itens ul li a {
+    margin: 10px 0;
+    color: w;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+
+/* animação menu*/
+
+#toggle:checked +.checkbox .trace:nth-child(1){
+    transform: rotate(45deg);
+    background-color:black;
+    top: 47px;
+}
+#toggle:checked + .checkbox .trace:nth-child(2){
+    transform: translateX(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+#toggle:checked +.checkbox .trace:nth-child(3){
+    transform: rotate(-45deg);
+    background-color: black;
+    top: 48px;
+}
+
+#toggle:checked +.checkbox{
+    background-color:gray;
+}
+
+#toggle:checked ~ .menu{
+    box-shadow: 0px 0px 0px 100vmax gray;
+    z-index: 1;
+}
+
+#toggle:checked ~ .menu-itens{
+    visibility: visible;
+    opacity: 1;
+}
+ 
